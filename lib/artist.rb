@@ -1,3 +1,4 @@
+require 'pry'
 class Artist 
   attr_accessor :name, :songs
   @@all = []
@@ -27,4 +28,21 @@ class Artist
     # new(name).tap{ |a| a.save }
   end
   
+  def add_song(song)
+      song.artist = self unless song.artist
+      @songs << song unless songs.include?(song)
+      
+    #   if song.artist == nil 
+    #   song.artist = self 
+    #   songs << song
+    #   songs
+    # end
+  end
+  
+  def genres 
+    x = songs.collect do |song|
+      song.genre
+    end.uniq
+  end 
+
 end 

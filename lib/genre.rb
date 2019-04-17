@@ -1,5 +1,6 @@
 class Genre 
   attr_accessor :name 
+  attr_reader :songs 
   @@all = [] 
   
   def initialize(name)
@@ -27,5 +28,11 @@ class Genre
     # Or, as a one-liner:
     # new(name).tap{ |g| g.save }
   end
+  
+  def artists 
+    songs.collect {|song| song.artist}.uniq
+  end 
+  
+  
 
 end 
