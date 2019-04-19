@@ -22,7 +22,10 @@ class Artist
 
   def self.create(name)
     new(name).tap{|artist| artist.save}
-
+  end
+  
+  def add_song()
+    
   end
 
 
