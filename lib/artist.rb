@@ -24,8 +24,8 @@ class Artist
     new(name).tap{|artist| artist.save}
   end
   
-  def add_song()
-    
+  def add_song(song)
+    @songs << song
   end
 
 
